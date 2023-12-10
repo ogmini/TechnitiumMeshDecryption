@@ -13,6 +13,8 @@ The command line application takes three arguments:
 * -r Profile Name
 * -l Location of Profile
 
+![Usage Screenshot](https://github.com/ogmini/TechnitiumMeshDecryption/blob/main/Downloads/Usage.PNG "Usage Screenshot")  
+
 ## Requirements
 .NET Framework 4.8
   
