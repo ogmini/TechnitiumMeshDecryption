@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6B9A05E-7417-4902-8B41-114CD0A8130E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MeshCore</RootNamespace>
+    <AssemblyName>MeshCore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="TechnitiumLibrary.IO">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.IO\bin\Debug\TechnitiumLibrary.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Net">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.Net\bin\Debug\TechnitiumLibrary.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Net.Tor">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.Net.Tor\bin\Debug\TechnitiumLibrary.Net.Tor.dll</HintPath>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Net.UPnP">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.Net.UPnP\bin\Debug\TechnitiumLibrary.Net.UPnP.dll</HintPath>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Security.Cryptography">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.Security.Cryptography\bin\Debug\TechnitiumLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Security.Cryptography.EllipticCurve">
+      <HintPath>..\..\TechnitiumLibrary-mesh\TechnitiumLibrary.Security.Cryptography.EllipticCurve\bin\Debug\TechnitiumLibrary.Security.Cryptography.EllipticCurve.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Debug.cs" />
+    <Compile Include="IDebug.cs" />
+    <Compile Include="MeshException.cs" />
+    <Compile Include="MeshNode.cs" />
+    <Compile Include="MeshUpdate.cs" />
+    <Compile Include="Message\MessageItem.cs" />
+    <Compile Include="Message\MessageRecipient.cs" />
+    <Compile Include="Message\MessageStore.cs" />
+    <Compile Include="Network\Connections\Connection.cs" />
+    <Compile Include="Network\Connections\ConnectionManager.cs" />
+    <Compile Include="Network\DHT\DhtManager.cs" />
+    <Compile Include="Network\DHT\DhtNode.cs" />
+    <Compile Include="Network\DHT\DhtRpcPacket.cs" />
+    <Compile Include="Network\DHT\IDhtConnectionManager.cs" />
+    <Compile Include="Network\DHT\KBucket.cs" />
+    <Compile Include="Network\DHT\NodeContact.cs" />
+    <Compile Include="Network\MeshNetwork.cs" />
+    <Compile Include="Network\MeshNetworkPacket.cs" />
+    <Compile Include="Network\MeshNetworkPeerInfo.cs" />
+    <Compile Include="Network\SecureChannel\SecureChannelClientStream.cs" />
+    <Compile Include="Network\SecureChannel\SecureChannelException.cs" />
+    <Compile Include="Network\SecureChannel\SecureChannelHandshakePacket.cs" />
+    <Compile Include="Network\SecureChannel\SecureChannelServerStream.cs" />
+    <Compile Include="Network\SecureChannel\SecureChannelStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
